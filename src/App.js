@@ -1,7 +1,15 @@
 import "./App.css";
+import Weather from "./Weather";
 
-function App() {
-  return <div className="App"></div>;
-}
+const App = () => {
+  return (
+    <div className="app">
+      <section>
+        <div className="heading"></div>
+        <Weather />
+      </section>
+    </div>
+  );
+};
 
 export default App;
