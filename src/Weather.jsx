@@ -1,4 +1,5 @@
 import { useState } from "react";
+import d2d from "degrees-to-direction";
 import Favourites from "./Favourites";
 
 const favouritesFromStorage = JSON.parse(localStorage.getItem("favourites"));
@@ -31,7 +32,7 @@ const Weather = () => {
       <h1>Find a forecast</h1>
       <input
         className="input_box"
-        placeholder="search for a place"
+        placeholder="search for a place...."
         onChange={(event) => setSelectedCity(event.target.value)}
         value={selectedCity}
         onKeyPress={weatherApi}
@@ -42,6 +43,7 @@ const Weather = () => {
         <div>
           <p>Location: {weatherData.name}</p>
           <p> Wind Speed: {weatherData.wind.speed} mph</p>
+          <p>Wind direction: {d2d(weatherData.wind.deg)}</p>
         </div>
       )}
 
