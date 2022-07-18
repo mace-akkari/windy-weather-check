@@ -14,6 +14,7 @@ const Favourites = ({ city, favourites, setFavourites }) => {
   return (
     <section className="favourites_container">
       <button
+        disabled={!city.id}
         className="favourites_button"
         onClick={() =>
           setFavourites((oldFavourites) => {
