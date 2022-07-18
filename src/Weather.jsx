@@ -9,8 +9,8 @@ const Weather = () => {
   const [weatherData, setweatherData] = useState([]);
   const [favourites, setFavourites] = useState(favouritesFromStorage ?? []);
   const [selectedCity, setSelectedCity] = useState("");
-  const ApiKey = "f694ce2ba95ee8b3677917d9205dbc0b";
-  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&units=metric&APPID=${ApiKey}`;
+
+  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`;
 
   const weatherApi = async (e) => {
     if (e?.key === "Enter") {
